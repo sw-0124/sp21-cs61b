@@ -1,5 +1,7 @@
 package timingtest;
+
 import edu.princeton.cs.algs4.Stopwatch;
+import org.eclipse.jetty.server.AcceptRateLimit;
 
 /**
  * Created by hug.
@@ -23,5 +25,24 @@ public class TimeAList {
 
     public static void timeAListConstruction() {
         // TODO: YOUR CODE HERE
+        AList<Integer> Ns = new AList<>();
+        AList<Double> times = new AList<>();
+        AList<Integer> opCounts = new AList<>();
+
+        for (int N = 1000; N <= 128000; N = N * 2) {
+            //创建集合进行添加元素
+            AList<Integer> aList = new AList<>();
+
+            Stopwatch sw = new Stopwatch();
+            for (int i = 0; i < N; i++) {
+                aList.addLast(1);
+            }
+            times.addLast(sw.elapsedTime());
+            Ns.addLast(N);
+            opCounts.addLast(N);
+
+        }
+        printTimingTable(Ns, times, opCounts);
+
     }
 }
