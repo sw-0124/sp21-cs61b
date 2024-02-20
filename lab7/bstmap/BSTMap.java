@@ -1,12 +1,10 @@
 package bstmap;
 
 
-import net.sf.saxon.expr.Calculator;
 
 import java.util.Iterator;
 import java.util.Set;
 
-import static org.junit.Assert.assertTrue;
 
 public class BSTMap<K extends Comparable<K> ,V> implements Map61B<K, V>{
 
